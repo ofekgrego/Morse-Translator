@@ -6,14 +6,16 @@ morseArray = [".-","-...","-.-.","-..",".","..-.","--.","....",
             "..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...",
             "-","..-","...-",".--","-..-","-.--","--..",",",".","\n"," ",""]
 
-def Translate(filePath, EnglishMorse):
-    # print(filePath)
-    # print(EnglishMorse)
+def Translate(filePath, EnglishMorse,savePath):
+    fileSplit = savePath.split("/")
+    fileName = fileSplit[len(fileSplit)-1].split(".")[0]
+
     endText = ""
     fileText = open(filePath, "r").read()
     if EnglishMorse == 0:
         for i in range(len(fileText)):
             endText += morseArray[englishArray.index(str(fileText[i]).upper())] + " "
+            newFile = open(savePath+"/"+fileName+"ToMorse.txt","w+")
     else:
         group = ""
         spaceCount = 0
@@ -34,5 +36,7 @@ def Translate(filePath, EnglishMorse):
                     else:
                         endText += " "
                     spaceCount += 1
+        newFile = open(savePath+"/"+fileName+"ToEngish.txt","w+")
 
-    print(endText)
+    newFile.write(endText)
+    print(newFile)
