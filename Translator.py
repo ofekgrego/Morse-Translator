@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 from tkinter import filedialog
 import TranslateFunc
+import tkinter.font as font
 
 window = Tk()
 window.resizable(False,False)
@@ -13,6 +14,9 @@ mainFrame.pack()
 filePath = ""
 radioChoose = IntVar()
 savePath = ""
+
+titleFont = font.Font(family="Helvtica", size=30)
+infoFont = font.Font(family="Helvtica", size=15)
 
 chooseFileButton = Button(window, text="Choose File to Translate")
 saveFolderButton = Button(window, text="Choose Folder to Save")
@@ -41,12 +45,11 @@ def continueTrans():
         TranslateFunc.Translate(filePath,radioChoose.get(),savePath)
         errorLabel.config(text="File Created!")
 
+titleLabel = Label(window, text="Morse Translator",font=titleFont,height=2).pack()
 
-space = Label(window, text="",height=2).pack()
+infoLabel = Label(window, text="Choose file to translate, pick from which language,\n and where to save it, and get your translate\n file to your computer.", font=infoFont).pack()
 
-titleLabel = Label(window, text="Morse Translator").pack()
-
-space = Label(window, text="",height=3).pack()
+space = Label(window, text="",height=0).pack()
 
 filePathLabel.pack()
 
