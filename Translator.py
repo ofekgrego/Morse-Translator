@@ -10,7 +10,6 @@ window.title("Morse Translator")
 mainFrame = Frame(window, width=400)
 mainFrame.pack()
 
-# filePath = "/Users/ofekg/Documents/Coding/Python/Morse-Translator/ScriptMorse.txt"
 filePath = ""
 radioChoose = IntVar()
 savePath = ""
