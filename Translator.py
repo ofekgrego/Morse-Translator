@@ -10,7 +10,6 @@ window.title("Morse Translator")
 mainFrame = Frame(window, width=400)
 mainFrame.pack()
 
-# filePath = "/Users/ofekg/Documents/Coding/Python/Morse-Translator/ScriptMorse.txt"
 filePath = ""
 radioChoose = IntVar()
 savePath = ""
@@ -49,6 +48,8 @@ titleLabel = Label(window, text="Morse Translator",font=titleFont,height=2).pack
 
 infoLabel = Label(window, text="Choose file to translate, pick from which language,\n and where to save it, and get your translate\n file to your computer.", font=infoFont).pack()
 
+space = Label(window, text="",height=0).pack()
+
 filePathLabel.pack()
 
 chooseFileButton.config(command=chooseFile)
@@ -77,3 +78,4 @@ space = Label(window, text="",height=3).pack()
 creditLabel = Label(window, text="Made By Ofek Grego").pack()
 
 window.mainloop()
+
