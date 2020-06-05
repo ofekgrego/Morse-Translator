@@ -1,14 +1,19 @@
 
 englishArray = ["A","B","C","D","E","F","G","H","I","J","K",
             "L","M","N","O","P","Q","R","S","T",
-            "U","V","X","W","Y","Z",",",".","\n"," ",""]
+            "U","V","X","W","Y","Z","0","1","2","3","4","5","6","7","8","9"
+            ",",".","\n"," ",""]
 morseArray = [".-","-...","-.-.","-..",".","..-.","--.","....",
             "..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...",
-            "-","..-","...-",".--","-..-","-.--","--..",",",".","\n"," ",""]
+            "-","..-","...-",".--","-..-","-.--","--..","-----",".----","..---","...--",
+            "....-",".....","-....","--...","---..","----."
+            ",",".","\n"," ",""]
 
 def Translate(filePath, EnglishMorse,savePath):
     fileSplit = savePath.split("/")
-    fileName = fileSplit[len(fileSplit)-1].split(".")[0]
+    filePathSplit = filePath.split("/")
+    fileName = filePathSplit[len(filePathSplit)-1].split(".")[0]
+    print(fileName)
 
     endText = ""
     fileText = open(filePath, "r").read()
@@ -39,4 +44,3 @@ def Translate(filePath, EnglishMorse,savePath):
         newFile = open(savePath+"/"+fileName+"ToEngish.txt","w+")
 
     newFile.write(endText)
-    print(newFile)
