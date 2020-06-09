@@ -44,3 +44,4 @@ def Translate(filePath, EnglishMorse,savePath):
         newFile = open(savePath+"/"+fileName+"ToEngish.txt","w+")
 
     newFile.write(endText)
+    newFile.close()
